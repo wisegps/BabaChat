@@ -23,7 +23,9 @@ public class LoginActivity extends Activity {
 	public void onClick(View view) {
 
 		switch (view.getId()) {
+		
 		case R.id.imgBtn:
+			
 			String name = ((EditText) findViewById(R.id.et_name)).getText()
 					.toString().trim();
 			if (name != null && name.length() > 0) {

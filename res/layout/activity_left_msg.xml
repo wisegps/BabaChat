@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rlytChat"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@android:color/white"
+    android:tag="chat" >
+<com.handmark.pulltorefresh.library.PullToRefreshListView 
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/listMsg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/btnSpeek"
+    android:background="@android:color/white"
+    android:fadingEdge="none"
+    android:fastScrollEnabled="false"
+    android:footerDividersEnabled="false"
+    android:divider="#00000000"
+    
+    android:headerDividersEnabled="false"
+    android:smoothScrollbar="false"
+    ptr:ptrAnimationStyle="rotate" />
+     
+    <Button
+        android:id="@+id/btnSpeek"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="5dp"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="按住说话"
+        android:textColor="#888888" />
+
+</RelativeLayout>

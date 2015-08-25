@@ -24,7 +24,8 @@ public class UserListAdapter extends BaseAdapter{
 
 	@Override
 	public int getCount() {
-		return memberList.size();
+		return 10;
+		//return memberList.size();
 	}
 
 	@Override
@@ -45,7 +46,7 @@ public class UserListAdapter extends BaseAdapter{
 			view = LayoutInflater.from(context).inflate(com.wise.baba.R.layout.user_list_item, null);
 		}
 		TextView textView = (TextView) view.findViewById(R.id.tv_name);
-		textView.setText(memberList.get(index).getIdentifier());
+		//textView.setText(memberList.get(index).getIdentifier());
 		return view;
 	}
 
