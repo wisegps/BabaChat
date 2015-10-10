@@ -11,6 +11,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 
 import com.baidu.mapapi.SDKInitializer;
@@ -35,6 +36,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		SDKInitializer.initialize(getApplicationContext());
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON); 
 		setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
 		setContentView(R.layout.activity_main);
 		 // configure the SlidingMenu
@@ -52,16 +54,16 @@ public class MainActivity extends Activity {
      	userListView = new UserListView(this);
 		chatView = new ChatView(this);
 		mMapView = (MapView) findViewById(R.id.bmapView);
-//		((App) this.getApplication()).getSDKControl().startSdkContext();
-//		IntentFilter intentFilter = new IntentFilter();
-//		intentFilter.addAction(Action.ACTION_START_CONTEXT_COMPLETE);
-//		intentFilter.addAction(Action.ACTION_CLOSE_CONTEXT_COMPLETE);	
-//		
-//		intentFilter.addAction(Action.ACTION_ENTER_ROOM_SUCCESS);
-//		
-//		intentFilter.addAction(Action.ACTION_MEMBER_CHANGE);
-//		mBroadcastReceiver = new AVBroadcastReceiver();
-//		registerReceiver(mBroadcastReceiver, intentFilter);
+		((App) this.getApplication()).getSDKControl().startSdkContext();
+		IntentFilter intentFilter = new IntentFilter();
+		intentFilter.addAction(Action.ACTION_START_CONTEXT_COMPLETE);
+		intentFilter.addAction(Action.ACTION_CLOSE_CONTEXT_COMPLETE);	
+		
+		intentFilter.addAction(Action.ACTION_ENTER_ROOM_SUCCESS);
+		
+		intentFilter.addAction(Action.ACTION_MEMBER_CHANGE);
+		mBroadcastReceiver = new AVBroadcastReceiver();
+		registerReceiver(mBroadcastReceiver, intentFilter);
 	}
 
 	

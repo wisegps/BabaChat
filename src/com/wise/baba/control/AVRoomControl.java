@@ -41,7 +41,7 @@ public class AVRoomControl {
 		AudioSDKControl sdkControl = app.getSDKControl();
 		AVContext avContext = sdkControl.getContextControl().getmAVContext();
 		int roomType = AVRoom.AV_ROOM_MULTI;
-		int roomId = 0;
+		int roomId = 1;
 
 		long authBits = AVRoom.AUTH_BITS_DEFUALT;//权限位；默认值是拥有所有权限。TODO：请业务侧填根据自己的情况填上权限位。
 		byte[] authBuffer = null;//权限位加密串；TODO：请业务侧填上自己的加密串。
